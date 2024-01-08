@@ -19,8 +19,8 @@
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
         <quarkus.platform.version>3.4.2</quarkus.platform.version>
-        <vaadin.version>24.1.12</vaadin.version>
-        <vaadin-quarkus-extension.version>24.1.12</vaadin-quarkus-extension.version>
+        <vaadin.version>24.3.2</vaadin.version>
+        <vaadin-quarkus-extension.version>24.3.2</vaadin-quarkus-extension.version>
     </properties>
     <dependencyManagement>
         <dependencies>
