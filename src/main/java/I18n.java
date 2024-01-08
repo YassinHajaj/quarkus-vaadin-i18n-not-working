@@ -1,7 +1,7 @@
 import com.vaadin.flow.i18n.I18NProvider;
 import com.vaadin.quarkus.annotation.VaadinServiceEnabled;
-import io.quarkus.runtime.StartupEvent;
-import jakarta.enterprise.event.Observes;
+import io.quarkus.arc.Unremovable;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.List;
 import java.util.Locale;
@@ -13,6 +13,8 @@ import static java.util.Locale.ENGLISH;
 import static java.util.Locale.FRANCE;
 import static java.util.Locale.forLanguageTag;
 
+@Unremovable
+@ApplicationScoped
 @VaadinServiceEnabled
 public class I18n implements I18NProvider {
 
@@ -35,10 +37,5 @@ public class I18n implements I18NProvider {
             var bundle = ResourceBundle.getBundle("vaadin-i18n/translations", ENGLISH);
             return bundle.getString(key);
         }
-    }
-
-    // comment this method out to reproduce the issue
-    public void dumbWorkAround(@Observes StartupEvent startupEvent) {
-        // ugly way to force the initialization of this bean
     }
 }
